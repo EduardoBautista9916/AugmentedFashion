@@ -1,0 +1,66 @@
+@import url('reset.css');
+@import url('fonts.css');
+
+/* Body */
+body{
+    background-color: rgb(0, 0, 0);
+}
+
+/* Header */
+header{
+    background-color: rgb(44, 44, 44);
+    padding-bottom: 80px;
+}
+
+div.top-header{
+    color: white;
+    background-color: rgb(55, 0, 128);
+    width: 80%;
+    max-width: 1020px;
+    margin: auto;
+    clear: both;
+    min-height: 77.2%;
+    padding: 10px;
+}
+
+img.icon-topHeader{
+    display: inline-block;
+    float: right;
+}
+
+#titulo{
+    font-size: 20pt;
+    padding: 20px;
+    float: left;
+    display: inline-block;
+}
+
+/* Nav */
+nav{
+    background-color: rgb(0, 162, 255);
+}
+
+/* Wrap */
+#wrap{
+    background-color: rgb(71, 245, 2);
+    width: 80%;
+    max-width: 1020px;
+    margin: auto;
+    clear: both;
+    min-height: 77.2%;
+}
+
+/* Main */
+main{
+    background-color: rgb(255, 251, 0);
+}
+
+/* Aside */
+aside{
+    background-color: rgb(0, 255, 242);
+}
+
+/* Footer */
+footer{
+    background-color: rgb(98, 3, 161);
+}
