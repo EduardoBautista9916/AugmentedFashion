@@ -1,0 +1,39 @@
+:root{
+    /*COLORES DE FONDO*/
+    /*HEADER*/
+    --Header-color: #03001e;
+    --Header-color-wekit: -webkit-linear-gradient(to left, #89253e, #3894d1, #2b7a63, #89253e, #3894d1, #2b7a63);
+    --Header-color-linear-gradient: linear-gradient(to left, #89253e, #3894d1, #2b7a63, #89253e, #3894d1, #2b7a63);
+    /*Menu Lateral*/
+    --Nav-color: #075269;  /* fallback for old browsers */
+    --Nav-color-webkit: -webkit-linear-gradient(to bottom, #89253e99, #2b7a6399);  /* Chrome 10-25, Safari 5.1-6 */
+    --Nav-color-linear-gradient: linear-gradient(to bottom, #89253e99, #2b7a6399); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    --Highlight-color: #d138c4;
+    --Highlight-webkit: -webkit-linear-gradient(to right, #1f6a9c, #165b47);
+    --Highlight-color-linear-gradient: linear-gradient(to right, #1f6a9c, #165b47);
+
+    --Buttons-color: #3894d1;
+    --Buttons-color-webkit: -webkit-linear-gradient(to right, #3894d1, #2b7a63);
+    --Buttons-color-linear-gradient: linear-gradient(to right, #3894d1, #2b7a63);
+
+    --Titles-section-color: #589634;
+    --Titles-section-color-webkit: -webkit-linear-gradient(to right, #1f6a9c, #165b47);
+    --Titles-section-color-linear-gradient:linear-gradient(to right, #3894d1, #2b7a63);
+
+    --Content-section-color: #433496;
+    --Content-section-color-webkit: -webkit-linear-gradient(to right, #593cc099, #89253e99);
+    --Content-section-color-linear-gradient:linear-gradient(to right, #593cc099, #89253e99);
+
+    --Footer-color: #025f48;
+    --Footer-color-webkit: -webkit-linear-gradient(to right, #000586, #598786, #896535);
+    --Footer-color-linear-gradient: linear-gradient(to right, #000586, #598786, #896535);
+}
+/*:root{
+    /*COLORES DE FONDO
+    --Header-color: #f6a6ff;
+    --Nav-color: #a554f1;
+    --Highlight-color: #fc66ed;
+    --Buttons-color: #f7a2ef;
+    --Footer-color: #025f48;
+}*/
