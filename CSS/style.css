@@ -179,7 +179,9 @@ section.container div.content-section{
 }
 
 div.content-product{
-    background-color: rgb(253, 218, 222);;
+    background: var(--Content-product-color);
+    background: var(--Content-product-color-webkit);
+    background: var(--Content-product-color-linear-gradient);
     margin: 5px;
     display: inline-block;
     width: 23%;

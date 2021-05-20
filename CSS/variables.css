@@ -25,6 +25,10 @@
     --Content-section-color-webkit: -webkit-linear-gradient(to right, #593cc099, #89253e99);
     --Content-section-color-linear-gradient:linear-gradient(to right, #593cc099, #89253e99);
 
+    --Content-product-color: #433496;
+    --Content-product-color-webkit: -webkit-linear-gradient(to right, #2b7a6399, #e7511699);
+    --Content-product-color-linear-gradient:linear-gradient(to right, #2b7a6399, #e7511699);
+
     --Footer-color: #025f48;
     --Footer-color-webkit: -webkit-linear-gradient(to right, #000586, #598786, #896535);
     --Footer-color-linear-gradient: linear-gradient(to right, #000586, #598786, #896535);
