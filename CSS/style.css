@@ -210,9 +210,9 @@ input[type = "radio"]{ display:none;}
     direction: rtl;/* right to left */
     unicode-bidi: bidi-override;/* bidi de bidireccional */
 }
-label:hover{color:rgb(11, 108, 138);}
-label:hover ~ label{color:rgb(11, 108, 138);}
-input[type="radio"]:checked ~ label{color: rgb(11, 108, 138);}
+label:hover{color:#dda815;}
+label:hover ~ label{color:#dda815;}
+input[type="radio"]:checked ~ label{color: #dda815;}
 
 footer{
     background: var(--Footer-color);
