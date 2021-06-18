@@ -1,0 +1,68 @@
+@import url(CSS/variables.css);
+
+.slider-products {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider-products ul{
+    display: flex;
+    padding: 0;
+    width: 250%;
+    animation: cambio-product 34s infinite alternate;
+}
+
+.slider-products li{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    margin: 0 0.5% 0 0.5%;
+}
+
+.slider-products a{
+    left: 0px;
+    padding: 0px;
+    margin: 0px;
+    background: rgba(255, 255, 255, 0);
+}
+
+.slider-products ul li a div.content-product{
+    width: 100%;
+}
+
+.slider-products img{
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes cambio-product {
+    0%{margin-left: 0;}
+    9%{margin-left: 0;}
+    
+    11%{margin-left: -25%;}
+    20%{margin-left: -25%;}
+    
+    22%{margin-left: -50%;}
+    31%{margin-left: -50%;}
+
+    33%{margin-left: -75%;}
+    42%{margin-left: -75%;}
+
+    44%{margin-left: -100%;}
+    53%{margin-left: -100%;}
+
+    55%{margin-left: -125%;}
+    64%{margin-left: -125%;}
+
+    66%{margin-left: -150%;}
+    75%{margin-left: -150%;}
+
+    77%{margin-left: -175%;}
+    86%{margin-left: -175%;}
+
+    88%{margin-left: -200%;}
+    100%{margin-left: -200%;}
+
+}

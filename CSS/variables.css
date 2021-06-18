@@ -22,26 +22,26 @@
     --Buttons-color-linear-gradient: linear-gradient(to right, #3894d1, #2b7a63);
 
     --Titles-section-color: #589634;
-    --Titles-section-color-webkit: -webkit-linear-gradient(to right, #1f6a9c, #165b47);
-    --Titles-section-color-linear-gradient:linear-gradient(to right, #1f6a9c, #165b47);
+    --Titles-section-color-webkit: -webkit-linear-gradient(to right, #89253e, #3894d1);
+    --Titles-section-color-linear-gradient:linear-gradient(to right, #89253e, #3894d1);
 
     --Content-section-color: #433496;
-    --Content-section-color-webkit: -webkit-linear-gradient(to right, #89253e99, #5c38d199, #80107199);
-    --Content-section-color-linear-gradient:linear-gradient(to right, #89253e99, #5c38d199, #80107199);
+    --Content-section-color-webkit: -webkit-linear-gradient(to right, #402b7a99, #89253e99);
+    --Content-section-color-linear-gradient:linear-gradient(to right, #402b7a99, #89253e99);
 
     --Content-product-color: #433496;
-    --Content-product-color-webkit: -webkit-linear-gradient(to top, #1f6a9c99, #165b4799);
-    --Content-product-color-linear-gradient:linear-gradient(to top, #1f6a9c99, #165b4799);
+    --Content-product-color-webkit: -webkit-linear-gradient(to top, #3894d199, #2b7a6399);
+    --Content-product-color-linear-gradient:linear-gradient(to right, #3894d199, #2b7a6399);
 
-    --Footer-color: #025f48;
-    --Footer-color-webkit: -webkit-linear-gradient(to right, #000586, #598786, #896535);
-    --Footer-color-linear-gradient: linear-gradient(to right, #000586, #598786, #896535);
+    --Footer-title-color: #292929;
+    --Footer-title-color-webkit: -webkit-linear-gradient(to right, #89253e, #3894d1);
+    --Footer-title-color-linear-gradient: linear-gradient(to right, #89253e, #3894d1);
+    
+    --Filter-color: #025f48;
+    --Filter-color-webkit: -webkit-linear-gradient(to top, #000586, #598786, #896535);
+    --Filter-color-linear-gradient: linear-gradient(to top, #000586, #598786, #896535);
+
+    --Footer-color: #313131;
+    --Footer-color-webkit: -webkit-linear-gradient(to right, #505050, #2a2a2a, #505050);
+    --Footer-color-linear-gradient: linear-gradient(to right, #505050, #2a2a2a, #505050);
 }
-/*:root{
-    /*COLORES DE FONDO
-    --Header-color: #f6a6ff;
-    --Nav-color: #a554f1;
-    --Highlight-color: #fc66ed;
-    --Buttons-color: #f7a2ef;
-    --Footer-color: #025f48;
-}*/
