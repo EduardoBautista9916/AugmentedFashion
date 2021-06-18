@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/slider.css">
+    <link rel="stylesheet" href="CSS/slider-products.css">
     <title>Augment Fashion</title>
 </head>
 <body>
@@ -19,7 +21,7 @@
             
         </div>
         <div class="header-center">
-            <img class="icon-Header" src="Images/AugmentFashion_LogoLigth.png" alt="User-Icon">
+            <img class="logo" src="Images/AugmentFashion_LogoLigth.png" alt="Logo">
         </div>
     </header>
     <nav>
@@ -30,224 +32,1001 @@
         <div id="menu">
             <ul>
                 <li class="optionMenu"><a href="index.html">INICIO</a></li>
-                <li class="optionMenu"><a href="#">Categorias</a></li>
+                <li class="optionMenu"><a href="Pages/Categorias.html">Categorias</a></li>
                 <li class="optionMenu"><a href="#">¿Quienes Somos?</a></li>
                 <li class="optionMenu"><a href="#">Contacto</a></li>
             </ul>
         </div>
     </nav>
-    <section id="slider">
-        <!--<ul class="slides">
-            <li id="slide1">
-                <img src="Images/Slides/slide01.jpg" alt="slide01">
+    <div id="slider">
+        <ul>
+            <li is="slide1">
+                <a href="Images/Slides/slide01.jpg">
+                    <img src="Images/Slides/slide01.jpg" alt="slide01">
+                </a>
             </li>
             <li id="slide2">
-                <img src="Images/Slides/slide02.jpg" alt="slide01">
+                <a href="Images/Slides/slide02.jpg">
+                    <img src="Images/Slides/slide02.jpg" alt="slide02">
+                </a>
             </li>
             <li id="slide3">
-                <img src="Images/Slides/slide03.jpg" alt="slide01">
+                <a href="Images/Slides/slide03.jpg">
+                    <img src="Images/Slides/slide03.jpg" alt="slide03">
+                </a>
             </li>
             <li id="slide4">
-                <img src="Images/Slides/slide04.png" alt="slide01">
+                <a href="Images/Slides/slide04.png">
+                    <img src="Images/Slides/slide04.png" alt="slide04">
+                </a>
             </li>
         </ul>
-        <ul class="control">
-            <li>
-                <a href="#slide1">1</a>
-            </li>
-            <li>
-                <a href="#slide2">2</a>
-            </li>
-            <li>
-                <a href="#slide3">3</a>
-            </li>
-            <li>
-                <a href="#slide4">4</a>
-            </li>
-        </ul>-->
-    </section>
+    </div>
     <main>
         <section class="container">
-            <H2 class="title-section">LO MAS VENDIDO</H2>
+            <h2 class="title-section">TENDENCIAS</h2>
             <div class="content-section">
-                <div class="content-product">
-                    <img src="Images/image.png" alt="Imagen Prueba">
-                    <H3>Nombre Producto</H3>
-                    <p class="desciption-product"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet recusandae officiis quae voluptate vel exercitationem accusamus facere voluptatibus! Distinctio placeat quod debitis incidunt doloremque facere, dolore quae similique molestias laboriosam. </p>
-                    <div class="ranking">
-                        <p>Asigne una clasificacion</p>
-                        <p class="clasificacion">
-                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                            --><label for="radio1">★</label><!--
-                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                            --><label for="radio2">★</label><!--
-                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                            --><label for="radio3">★</label><!--
-                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                            --><label for="radio4">★</label><!--
-                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                            --><label for="radio5">★</label>
-                          </p>
-                    </div>
-                </div>
-                <div class="content-product">
-                    <img src="Images/image.png" alt="Imagen Prueba">
-                    <H3>Nombre Producto</H3>
-                    <p class="desciption-product"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet recusandae officiis quae voluptate vel exercitationem accusamus facere voluptatibus! Distinctio placeat quod debitis incidunt doloremque facere, dolore quae similique molestias laboriosam. </p>
-                    <div class="ranking">
-                        <p>Asigne una clasificacion</p>
-                        <p class="clasificacion">
-                            <input id="radio6" type="radio" name="estrellas" value="5"><!--
-                            --><label for="radio6">★</label><!--
-                            --><input id="radio7" type="radio" name="estrellas" value="4"><!--
-                            --><label for="radio7">★</label><!--
-                            --><input id="radio8" type="radio" name="estrellas" value="3"><!--
-                            --><label for="radio8">★</label><!--
-                            --><input id="radio9" type="radio" name="estrellas" value="2"><!--
-                            --><label for="radio9">★</label><!--
-                            --><input id="radio10" type="radio" name="estrellas" value="1"><!--
-                            --><label for="radio10">★</label>
-                          </p>
-                    </div>
-                </div>
-                <div class="content-product">
-                    <img src="Images/image.png" alt="Imagen Prueba">
-                    <H3>Nombre Producto</H3>
-                    <p class="desciption-product"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet recusandae officiis quae voluptate vel exercitationem accusamus facere voluptatibus! Distinctio placeat quod debitis incidunt doloremque facere, dolore quae similique molestias laboriosam. </p>
-                    <div class="ranking">
-                        <p>Asigne una clasificacion</p>
-                        <p class="clasificacion">
-                            <input id="radio11" type="radio" name="estrellas" value="5"><!--
-                            --><label for="radio11">★</label><!--
-                            --><input id="radio12" type="radio" name="estrellas" value="4"><!--
-                            --><label for="radio12">★</label><!--
-                            --><input id="radio13" type="radio" name="estrellas" value="3"><!--
-                            --><label for="radio13">★</label><!--
-                            --><input id="radio14" type="radio" name="estrellas" value="2"><!--
-                            --><label for="radio14">★</label><!--
-                            --><input id="radio15" type="radio" name="estrellas" value="1"><!--
-                            --><label for="radio15">★</label>
-                          </p>
-                    </div>
-                </div>
-                <div class="content-product">
-                    <img src="Images/image.png" alt="Imagen Prueba">
-                    <H3>Nombre Producto</H3>
-                    <p class="desciption-product"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet recusandae officiis quae voluptate vel exercitationem accusamus facere voluptatibus! Distinctio placeat quod debitis incidunt doloremque facere, dolore quae similique molestias laboriosam. </p>
-                    <div class="ranking">
-                        <p>Asigne una clasificacion</p>
-                        <p class="clasificacion">
-                            <input id="radio16" type="radio" name="estrellas" value="5"><!--
-                            --><label for="radio16">★</label><!--
-                            --><input id="radio17" type="radio" name="estrellas" value="4"><!--
-                            --><label for="radio17">★</label><!--
-                            --><input id="radio18" type="radio" name="estrellas" value="3"><!--
-                            --><label for="radio18">★</label><!--
-                            --><input id="radio19" type="radio" name="estrellas" value="2"><!--
-                            --><label for="radio19">★</label><!--
-                            --><input id="radio20" type="radio" name="estrellas" value="1"><!--
-                            --><label for="radio20">★</label>
-                          </p>
-                    </div>
+                <div class="slider-products">
+                    <ul>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>1.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>2.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>3.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>4.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>5.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>6.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>7.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>8.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>9.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>10.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>               
+                    </ul>
                 </div>
             </div>
         </section>
         <section class="container">
-            <H2 class="title-section">LO MAS VENDIDO</H2>
+            <h2 class="title-section">LO MAS VENDIDO</h2>
             <div class="content-section">
-                <div class="content-product">
-                    <img src="Images/image.png" alt="Imagen Prueba">
-                    <H3>Nombre Producto</H3>
-                    <div class="ranking">
-                        <p>Asigne una clasificacion</p>
-                        <p class="clasificacion">
-                            <input id="radio21" type="radio" name="estrellas" value="5"><!--
-                            --><label for="radio21">★</label><!--
-                            --><input id="radio22" type="radio" name="estrellas" value="4"><!--
-                            --><label for="radio22">★</label><!--
-                            --><input id="radio23" type="radio" name="estrellas" value="3"><!--
-                            --><label for="radio23">★</label><!--
-                            --><input id="radio24" type="radio" name="estrellas" value="2"><!--
-                            --><label for="radio24">★</label><!--
-                            --><input id="radio25" type="radio" name="estrellas" value="1"><!--
-                            --><label for="radio25">★</label>
-                          </p>
-                    </div>
-                </div>
-                <div class="content-product">
-                    <img src="Images/image.png" alt="Imagen Prueba">
-                    <H3>Nombre Producto</H3>
-                    <div class="ranking">
-                        <p>Asigne una clasificacion</p>
-                        <p class="clasificacion">
-                            <input id="radio26" type="radio" name="estrellas" value="5"><!--
-                            --><label for="radio26">★</label><!--
-                            --><input id="radio27" type="radio" name="estrellas" value="4"><!--
-                            --><label for="radio27">★</label><!--
-                            --><input id="radio28" type="radio" name="estrellas" value="3"><!--
-                            --><label for="radio28">★</label><!--
-                            --><input id="radio29" type="radio" name="estrellas" value="2"><!--
-                            --><label for="radio29">★</label><!--
-                            --><input id="radio30" type="radio" name="estrellas" value="1"><!--
-                            --><label for="radio30">★</label>
-                          </p>
-                    </div>
-                </div>
-                <div class="content-product">
-                    <img src="Images/image.png" alt="Imagen Prueba">
-                    <H3>Nombre Producto</H3>
-                    <div class="ranking">
-                        <p>Asigne una clasificacion</p>
-                        <p class="clasificacion">
-                            <input id="radio31" type="radio" name="estrellas" value="5"><!--
-                            --><label for="radio31">★</label><!--
-                            --><input id="radio32" type="radio" name="estrellas" value="4"><!--
-                            --><label for="radio32">★</label><!--
-                            --><input id="radio33" type="radio" name="estrellas" value="3"><!--
-                            --><label for="radio33">★</label><!--
-                            --><input id="radio34" type="radio" name="estrellas" value="2"><!--
-                            --><label for="radio34">★</label><!--
-                            --><input id="radio35" type="radio" name="estrellas" value="1"><!--
-                            --><label for="radio35">★</label>
-                          </p>
-                    </div>
-                </div>
-                <div class="content-product">
-                    <img src="Images/image.png" alt="Imagen Prueba">
-                    <H3>Nombre Producto</H3>
-                    <div class="ranking">
-                        <p>Asigne una clasificacion</p>
-                        <p class="clasificacion">
-                            <input id="radio36" type="radio" name="estrellas" value="5"><!--
-                            --><label for="radio36">★</label><!--
-                            --><input id="radio37" type="radio" name="estrellas" value="4"><!--
-                            --><label for="radio37">★</label><!--
-                            --><input id="radio38" type="radio" name="estrellas" value="3"><!--
-                            --><label for="radio38">★</label><!--
-                            --><input id="radio39" type="radio" name="estrellas" value="2"><!--
-                            --><label for="radio39">★</label><!--
-                            --><input id="radio40" type="radio" name="estrellas" value="1"><!--
-                            --><label for="radio40">★</label>
-                          </p>
-                    </div>
+                <div class="slider-products">
+                    <ul>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>1.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>2.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>3.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>4.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>5.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>6.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>7.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>8.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>9.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>10.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>               
+                    </ul>
                 </div>
             </div>
         </section>
         <section class="container">
-            <H2 class="title-section">LO MAS VENDIDO</H2>
+            <h2 class="title-section">ESTILOS</h2>
             <div class="content-section">
-                <img src="Images/image.png" alt="Imagen Prueba">
+                <div class="slider-products">
+                    <ul>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>1.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>2.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>3.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>4.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>5.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>6.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>7.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>8.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>9.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>10.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>               
+                    </ul>
+                </div>
             </div>
         </section>
         <section class="container">
-            <H2 class="title-section">LO MAS VENDIDO</H2>
+            <h2 class="title-section">PRENDAS</h2>
             <div class="content-section">
-                <img src="Images/image.png" alt="Imagen Prueba">
+                <div class="slider-products">
+                    <ul>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>1.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>2.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>3.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>4.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>5.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>6.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>7.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>8.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>9.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Images/image.png">
+                                <div class="content-product">
+                                    <img src="Images/image.png" alt="Imagen Prueba">
+                                    <H3>10.-Nombre Producto</H3>
+                                    <div class="ranking">
+                                        <p>Asigne una clasificacion</p>
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5">★</label>
+                                          </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>               
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
     <footer>
-        footer
+        <div id="footer-title">
+            <p>Seguir a AUGMENT FASHION</p>
+            <a href="#"><img src="Images/icons/facebook-icon.png" alt="facebook"></a>
+            <a href="#"><img src="Images/icons/twitter-icon.png" alt="Twitter"></a>
+        </div>
+        <small id="derechos">Todos los derechos reservados Copyright &copy EduardoBautista 2018</small>
     </footer>
 </body>
 </html>
