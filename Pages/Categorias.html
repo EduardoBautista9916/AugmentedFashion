@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/slider.css">
+    <link rel="stylesheet" href="../CSS/slider-products.css">
+    <link rel="stylesheet" href="../CSS/filter-controls.css">
+    <title>Augment Fashion</title>
+    
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <button id="btnShop">
+                <img class="icon-Header" src="../Images/icons/shopping-car-icon-ligth.png" alt="User-Icon">
+            </button>
+            <button id="btnUser">
+                <img class="icon-Header" src="../Images/icons/user-icon.png" alt="User-Icon">
+            </button>
+            
+        </div>
+        <div class="header-center">
+            <img class="logo" src="../Images/AugmentFashion_LogoLigth.png" alt="Logo">
+        </div>
+    </header>
+    <nav>
+        <input type="checkbox" id="mostrar-menu" role="button">
+        <label for="mostrar-menu" id="lblMenu">
+            <img class="icon-Header" src="../Images/icons/menu-icon-ligth.png" alt="Main-Icon" >
+        </label>
+        <div id="menu">
+            <ul>
+                <li class="optionMenu"><a href="../index.html">INICIO</a></li>
+                <li class="optionMenu"><a href="Categorias.html">Categorias</a></li>
+                <li class="optionMenu"><a href="#">¿Quienes Somos?</a></li>
+                <li class="optionMenu"><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="margin-top: 80px;">
+        <H2 class="title-menu">  CATEGORIAS</H2>
+        <div class="contend-menu">
+            <div class="filtros">
+                <H3 class="title-filter">FILTROS</H3>
+                <div class="contend-filter">
+                    <div class="container-grid">
+                        <div class="row"><div class="col-12"><p class="titles-filters">Rango de Precio</p></div></div>
+                        <div class="row">
+                            <div class="col-2"><label for="input" id="precio-min-label"></label></div>
+                            <div class="col-8"><input type="range" name="Precio-min" id="precio-min" class="item-information slider" min="100" max="500" step="10" value="100"></div>
+                            <div class="col-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2"></div>
+                            <div class="col-8"><input type="range" name="Precio-max" id="precio-max" class="item-information slider" min="100" max="500" step="10" value="500"></div>
+                            <div class="col-2"><label for="precio-max" id="precio-max-label"></label></div>
+                        </div>
+                    </div>
+                    <p class="titles-filters">Estilos</p>
+                    <ul class="styles">
+                        <li><input type="checkbox" name="styler" id="styler1" class="check-estilo"> <label for="styler1" class="styler-label">Deportivo</label></li>
+                        <li><input type="checkbox" name="styler" id="styler2" class="check-estilo"> <label for="styler2" class="styler-label">Sport</label></li>
+                        <li><input type="checkbox" name="styler" id="styler3" class="check-estilo"> <label for="styler3" class="styler-label">Vaquero</label></li>
+                        <li><input type="checkbox" name="styler" id="styler4" class="check-estilo"> <label for="styler4" class="styler-label">Retro</label></li>
+                        <li><input type="checkbox" name="styler" id="styler5" class="check-estilo"> <label for="styler5" class="styler-label">Casual</label></li>
+                        <li><input type="checkbox" name="styler" id="styler6" class="check-estilo"> <label for="styler6" class="styler-label">70's</label></li>
+                    </ul>
+                    <p class="titles-filters">Colores</p>
+                    <ul class="colors">
+                        <li><input type="checkbox" name="colors" id="color1" class="color-input"><label for="color1" id="color-label1" class="color-label"></label></li>
+                        <li><input type="checkbox" name="colors" id="color2" class="color-input"><label for="color2" id="color-label2" class="color-label"></label></li>
+                        <li><input type="checkbox" name="colors" id="color3" class="color-input"><label for="color3" id="color-label3" class="color-label"></label></li>
+                        <li><input type="checkbox" name="colors" id="color4" class="color-input"><label for="color4" id="color-label4" class="color-label"></label></li>
+                        <li><input type="checkbox" name="colors" id="color5" class="color-input"><label for="color5" id="color-label5" class="color-label"></label></li>
+                        <li><input type="checkbox" name="colors" id="color6" class="color-input"><label for="color6" id="color-label6" class="color-label"></label></li>
+                        <li><input type="checkbox" name="colors" id="color7" class="color-input"><label for="color7" id="color-label7" class="color-label"></label></li>
+                        <li><input type="checkbox" name="colors" id="color8" class="color-input"><label for="color8" id="color-label8" class="color-label"></label></li>
+                        <li><input type="checkbox" name="colors" id="color9" class="color-input"><label for="color9" id="color-label9" class="color-label"></label></li>
+                        <li><input type="checkbox" name="colors" id="color10" class="color-input"><label for="color10" id="color-label10" class="color-label"></label></li>
+                        <li><input type="checkbox" name="colors" id="color11" class="color-input"><label for="color11" id="color-label11" class="color-label"></label></li>
+                        <li><input type="checkbox" name="colors" id="color12" class="color-input"><label for="color12" id="color-label12" class="color-label"></label></li>
+                        <li><input type="checkbox" name="colors" id="color13" class="color-input"><label for="color13" id="color-label13" class="color-label"></label></li>
+                        <li><input type="checkbox" name="colors" id="color14" class="color-input"><label for="color14" id="color-label14" class="color-label"></label></li> 
+                    </ul>
+                    <p class="titles-filters">Materiales</p>
+                    <ul class="materiales">
+                        <li><input type="checkbox" name="Material" id="material1"> <label for="material1" class="material-label">Algodon</label></li>
+                        <li><input type="checkbox" name="Material" id="material2"> <label for="material2" class="material-label">Poliester</label></li>
+                        <li><input type="checkbox" name="Material" id="material3"> <label for="material3" class="material-label">Lana</label></li>
+                        <li><input type="checkbox" name="Material" id="material4"> <label for="material4" class="material-label">Rayon</label></li>
+                    </ul>
+                    <div id="information">
+                        <div class="container-grid information-contend">
+                            <div class="row">
+                                <div class="col-12"><div class="titles-filters">Informacion</div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><label for="talla-input" class="information-label">Talla</label></div>
+                                <div class="col-8"><input type="text" name="Talla" id="talla-input" class="item-information"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><label for="talla-input" class="information-label">Cadera</label></div>
+                                <div class="col-6"><input type="number" name="Cadera" id="pecho-input" class="item-information"></div>
+                                <div class="col-2"><label for="talla-input" class="information-label">cm</label></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><label for="talla-input" class="information-label">Cadera</label></div>
+                                <div class="col-6"><input type="number" name="Cadera" id="pecho-input" class="item-information"></div>
+                                <div class="col-2"><label for="talla-input" class="information-label">cm</label></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><label for="talla-input" class="information-label">Cadera</label></div>
+                                <div class="col-6"><input type="number" name="Cadera" id="pecho-input" class="item-information"></div>
+                                <div class="col-2"><label for="talla-input" class="information-label">cm</label></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="catalogo">
+                <a href="../Images/image.png">
+                    <div class="content-product">
+                        <img src="../Images/image.png" alt="Imagen Prueba">
+                        <H3>1.-Nombre Producto</H3>
+                        <div class="ranking">
+                            <p>Asigne una clasificacion</p>
+                            <p class="clasificacion">
+                                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                --><label for="radio1">★</label><!--
+                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                --><label for="radio2">★</label><!--
+                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                --><label for="radio3">★</label><!--
+                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                --><label for="radio4">★</label><!--
+                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                --><label for="radio5">★</label>
+                              </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="../Images/image.png">
+                    <div class="content-product">
+                        <img src="../Images/image.png" alt="Imagen Prueba">
+                        <H3>1.-Nombre Producto</H3>
+                        <div class="ranking">
+                            <p>Asigne una clasificacion</p>
+                            <p class="clasificacion">
+                                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                --><label for="radio1">★</label><!--
+                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                --><label for="radio2">★</label><!--
+                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                --><label for="radio3">★</label><!--
+                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                --><label for="radio4">★</label><!--
+                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                --><label for="radio5">★</label>
+                              </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="../Images/image.png">
+                    <div class="content-product">
+                        <img src="../Images/image.png" alt="Imagen Prueba">
+                        <H3>1.-Nombre Producto</H3>
+                        <div class="ranking">
+                            <p>Asigne una clasificacion</p>
+                            <p class="clasificacion">
+                                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                --><label for="radio1">★</label><!--
+                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                --><label for="radio2">★</label><!--
+                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                --><label for="radio3">★</label><!--
+                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                --><label for="radio4">★</label><!--
+                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                --><label for="radio5">★</label>
+                              </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="../Images/image.png">
+                    <div class="content-product">
+                        <img src="../Images/image.png" alt="Imagen Prueba">
+                        <H3>1.-Nombre Producto</H3>
+                        <div class="ranking">
+                            <p>Asigne una clasificacion</p>
+                            <p class="clasificacion">
+                                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                --><label for="radio1">★</label><!--
+                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                --><label for="radio2">★</label><!--
+                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                --><label for="radio3">★</label><!--
+                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                --><label for="radio4">★</label><!--
+                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                --><label for="radio5">★</label>
+                              </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="../Images/image.png">
+                    <div class="content-product">
+                        <img src="../Images/image.png" alt="Imagen Prueba">
+                        <H3>1.-Nombre Producto</H3>
+                        <div class="ranking">
+                            <p>Asigne una clasificacion</p>
+                            <p class="clasificacion">
+                                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                --><label for="radio1">★</label><!--
+                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                --><label for="radio2">★</label><!--
+                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                --><label for="radio3">★</label><!--
+                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                --><label for="radio4">★</label><!--
+                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                --><label for="radio5">★</label>
+                              </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="../Images/image.png">
+                    <div class="content-product">
+                        <img src="../Images/image.png" alt="Imagen Prueba">
+                        <H3>1.-Nombre Producto</H3>
+                        <div class="ranking">
+                            <p>Asigne una clasificacion</p>
+                            <p class="clasificacion">
+                                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                --><label for="radio1">★</label><!--
+                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                --><label for="radio2">★</label><!--
+                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                --><label for="radio3">★</label><!--
+                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                --><label for="radio4">★</label><!--
+                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                --><label for="radio5">★</label>
+                              </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="../Images/image.png">
+                    <div class="content-product">
+                        <img src="../Images/image.png" alt="Imagen Prueba">
+                        <H3>1.-Nombre Producto</H3>
+                        <div class="ranking">
+                            <p>Asigne una clasificacion</p>
+                            <p class="clasificacion">
+                                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                --><label for="radio1">★</label><!--
+                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                --><label for="radio2">★</label><!--
+                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                --><label for="radio3">★</label><!--
+                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                --><label for="radio4">★</label><!--
+                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                --><label for="radio5">★</label>
+                              </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="../Images/image.png">
+                    <div class="content-product">
+                        <img src="../Images/image.png" alt="Imagen Prueba">
+                        <H3>1.-Nombre Producto</H3>
+                        <div class="ranking">
+                            <p>Asigne una clasificacion</p>
+                            <p class="clasificacion">
+                                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                --><label for="radio1">★</label><!--
+                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                --><label for="radio2">★</label><!--
+                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                --><label for="radio3">★</label><!--
+                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                --><label for="radio4">★</label><!--
+                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                --><label for="radio5">★</label>
+                              </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+    <script src="../JavaScript/program01.js"></script>
+    <footer>
+        <div id="footer-title">
+            <p>Seguir a AUGMENT FASHION</p>
+            <a href="#"><img src="../Images/icons/facebook-icon.png" alt="facebook"></a>
+            <a href="#"><img src="../Images/icons/twitter-icon.png" alt="Twitter"></a>
+        </div>
+        <small id="derechos">Todos los derechos reservados Copyright &copy EduardoBautista 2018</small>
+    </footer>
+</body>
+</html>
