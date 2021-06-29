@@ -141,6 +141,7 @@ CREATE TABLE CAT_FORMAS_PAGO(
 CREATE TABLE TBL_ROPAS(
     NID_ROPA INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
     CROPA VARCHAR(50) NOT NULL,
+    CRUTA VARCHAR(50) NOT NULL,
     CDESCRIPCION TEXT NOT NULL,
     FPRECIO FLOAT NOT NULL,
     NID_TIPO_ROPA INT(10) UNSIGNED NOT NULL,
@@ -429,30 +430,36 @@ $$ DELIMITER ;
 
 -- Procesimientos de Tablas --
 DELIMITER $$
-CREATE PROCEDURE SPD_INSERTA_ROPA(
-    IN pcRopa VARCHAR(50),
-    IN pcDescripcion TEXT,
-    IN pfPrecio FLOAT,
-    IN pcModa VARCHAR(50),
-    IN pcColor VARCHAR(50),
-    IN pnRed INT,
-    IN pnGreen INT,
-    IN pnBlue INT,
-    IN pcMaterial VARCHAR(50),
-    OUT pcValor INT)
+CREATE FUNCTION SPD_INSERTA_ROPA(
+    pcRopa VARCHAR(50),
+    pcRuta VARCHAR(50),
+    pcDescripcion TEXT,
+    pfPrecio FLOAT,
+    pcModa VARCHAR(50),
+    pcColor VARCHAR(50),
+    pnRed INT,
+    pnGreen INT,
+    pnBlue INT,
+    pcMaterial VARCHAR(50))
+    RETURNS INT(11)
 BEGIN
-    IF EXISTS(SELECT NID_ROPA FROM TBL_ROPAS WHERE CDESCRIPCION = pcDescripcion) THEN
-        SET pcValor = CONVERT((SELECT NID_ROPA FROM TBL_ROPAS WHERE CDESCRIPCION = pcDescripcion), UNSIGNED);
+    DECLARE idTipoRopa INT;
+    DECLARE idModa INT; 
+    DECLARE idColor INT; 
+    DECLARE idMaterial INT;
+    DECLARE idRopa INT;
+    CALL SPD_INSERTA_TIPO_ROPA(pcRopa,idTipoRopa);
+    CALL SPD_INSERTA_MODA(pcModa,idModa);
+    CALL SPD_INSERTA_COLORES(pcColor,pnRed,pnGreen,pnBlue,idColor);
+    CALL SPD_INSERTA_MATERIAL(pcMaterial,idMaterial);
+    IF EXISTS(SELECT NID_ROPA FROM TBL_ROPAS WHERE CROPA = pcRopa AND NID_COLOR = idColor) THEN
+        SET idRopa = CONVERT((SELECT NID_ROPA FROM TBL_ROPAS WHERE CROPA = pcRopa AND NID_COLOR = idColor), UNSIGNED);
+        RETURN idRopa;
     ELSE
-        DECLARE idTipoRopa INT, idModa INT, idColor INT, idMaterial INT;
-        CALL SPD_INSERTA_TIPO_ROPA(pcRopa,idTipoRopa);
-        CALL SPD_INSERTA_MODA(pcModa,idModa);
-        CALL SPD_INSERTA_COLORES(pcColor,pnRed,pnGreen,pnBlue,idColor);
-        CALL SPD_INSERTA_MATERIAL(pcMaterial,idMaterial);
-
-        INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-        VALUES(pcRopa,pcDescripcion,pfPrecio,idTipoRopa,idModa,idColor,idMaterial,1,NOW());
-        SET pcValor = CONVERT((SELECT NID_ROPA FROM TBL_ROPAS WHERE CDESCRIPCION = pcDescripcion), UNSIGNED);
+        INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+        VALUES(pcRopa,pcRuta,pcDescripcion,pfPrecio,idTipoRopa,idModa,idColor,idMaterial,1,NOW());
+        SET idRopa = CONVERT((SELECT NID_ROPA FROM TBL_ROPAS WHERE CROPA = pcRopa AND NID_COLOR = idColor), UNSIGNED);
+        RETURN idRopa;
     END IF;
 END
 $$ DELIMITER ;
@@ -469,7 +476,12 @@ CREATE PROCEDURE SPD_INSERTA_DIRECCION(
     IN pcLote VARCHAR(5),
     OUT pcValor INT)
 BEGIN
-    DECLARE idPais INT, idEstado INT, idDelegacion INT, idCodigoPostal INT, idColonia INT, idCalle INT;
+    DECLARE idPais INT;
+    DECLARE idEstado INT;
+    DECLARE idDelegacion INT;
+    DECLARE idCodigoPostal INT;
+    DECLARE idColonia INT;
+    DECLARE idCalle INT;
     CALL SPD_INSERTA_PAIS(pcPais,idPais);
     CALL SPD_INSERTA_ESTADO(pcEstado,idEstado);
     CALL SPD_INSERTA_DELEGACION_MUNICIPIO(pcDelegacion,idDelegacion);
@@ -483,7 +495,7 @@ BEGIN
     AND NID_DELEGACION_MUNICIPIO = idDelegacion
     AND NID_CODIGO_POSTAL = idCodigoPostal
     AND NID_COLONIA = idColonia
-    AND NID_CALLE = CALL idCalle
+    AND NID_CALLE = idCalle
     AND CMANZANA = pcManzana
     AND CLOTE = pcLote) THEN
         SET pcValor = CONVERT((SELECT NID_DIRECCION FROM TBL_DIRECCIONES 
@@ -492,7 +504,7 @@ BEGIN
         AND NID_DELEGACION_MUNICIPIO = idDelegacion
         AND NID_CODIGO_POSTAL = idCodigoPostal
         AND NID_COLONIA = idColonia
-        AND NID_CALLE = CALL idCalle
+        AND NID_CALLE = idCalle
         AND CMANZANA = pcManzana
         AND CLOTE = pcLote), UNSIGNED);
     ELSE
@@ -504,7 +516,7 @@ BEGIN
         AND NID_DELEGACION_MUNICIPIO = idDelegacion
         AND NID_CODIGO_POSTAL = idCodigoPostal
         AND NID_COLONIA = idColonia
-        AND NID_CALLE = CALL idCalle
+        AND NID_CALLE = idCalle
         AND CMANZANA = pcManzana
         AND CLOTE = pcLote), UNSIGNED);
     END IF;
@@ -552,7 +564,9 @@ CREATE PROCEDURE SPD_INSERTA_USUARIO(
     IN pcFormaPago VARCHAR(50),
     OUT pcValor INT)
 BEGIN
-    DECLARE idTipoUsuario INT, idDirecion INT, idPago INT;
+    DECLARE idTipoUsuario INT;
+    DECLARE idDirecion INT;
+    DECLARE idPago INT;
     CALL SPD_INSERTA_TIPO_USUARIO(pcTipoUsuario,idTipoUsuario);
     CALL SPD_INSERTA_DIRECCION(pcPais,pcEstado,pcDelegacion,pcCodigoPostal,pcColonia,pcCalle,pcManzana,pcLote,idDirecion);
     CALL SPD_INSERTA_FORMA_PAGO(pcPago,pcFormaPago,idPago);
@@ -570,21 +584,17 @@ $$ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE SPD_INSERTA_INVENTARIO(
     IN pcRopa VARCHAR(50),
-    IN pcDescripcion TEXT,
-    IN pfPrecio FLOAT,
-    IN pcModa VARCHAR(50),
     IN pcColor VARCHAR(50),
-    IN pnRed INT,
-    IN pnGreen INT,
-    IN pnBlue INT,
-    IN pcMaterial VARCHAR(50),
     IN pcTalla VARCHAR(5),
     IN pnCantidad INT,
     OUT pcValor INT)
 BEGIN
     DECLARE idRopa INT;
-    CALL SPD_INSERTA_ROPA(pcRopa,pcDescripcion,pfPrecio,pcModa,pcColor,pnRed,pnGreen,pnBlue,pcMaterial,idRopa);
+    SET idRopa = SPD_INSERTA_ROPA(pcRopa,"","",0,"",pcColor,0,0,0,"");
     IF EXISTS(SELECT NID_INVENTARIO FROM TBL_INVENTARIO WHERE NID_ROPA = idRopa AND CTALLA = pcTalla) THEN
+        UPDATE TBL_INVENTARIO
+        SET NCANTIDAD = pnCantidad
+        WHERE NID_ROPA = idRopa AND CTALLA = pcTalla;
         SET pcValor = CONVERT((SELECT NID_INVENTARIO FROM TBL_INVENTARIO WHERE NID_ROPA = idRopa AND CTALLA = pcTalla), UNSIGNED);
     ELSE
         INSERT INTO TBL_INVENTARIO(NID_ROPA,CTALLA, NCANTIDAD,BHABILITADO,DFECHA_ALTA)
@@ -594,6 +604,25 @@ BEGIN
 END
 $$ DELIMITER ;
 
+DELIMITER $$
+CREATE PROCEDURE SPD_INSERTA_COMPRA(
+    IN pcUser VARCHAR(50),
+    IN pfPrecio_Total FLOAT,
+    OUT pcValor INT)
+BEGIN
+    DECLARE idUsuario INT;    
+    IF EXISTS(SELECT * FROM TBL_USUARIOS WHERE CNICKNAME = pcUser) THEN
+        SET idUsuario = CONVERT((SELECT NID_USUARIO FROM TBL_USUARIOS WHERE CNICKNAME = pcUser), UNSIGNED);
+        INSERT INTO TBL_COMPRAS (NID_USUARIO,FPRECIO_TOTAL,DFECHA)
+        VALUES(idUsuario,pfPrecio_Total,NOW());
+        SET pcValor = CONVERT((SELECT NID_COMPRA FROM TBL_COMPRAS WHERE NID_USUARIO = pnUsuario AND FPRECIO_TOTAL = pfPrecio AND DFECHA = NOW()), UNSIGNED);
+    ELSE
+        SET pcValor = NULL;
+    END IF;
+END
+$$ DELIMITER ;
+
+ 
 -- Llenado del Catalogo Tipos de Ropas --
 INSERT INTO CAT_TIPOS_ROPAS(CTIPO_ROPA,BHABILITADO,DFECHA_ALTA)
 VALUES("Pantalon",1,NOW());
@@ -798,84 +827,84 @@ INSERT INTO CAT_FORMAS_PAGO(CFORMAS_PAGO,BHABILITADO,DFECHA_ALTA)
 VALUES("Pay Pal",1,NOW());
 
 -- Llenado de Tabla Ropa -- 
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Blusa de Cuello V",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Blusa de Cuello V","../Images/Ropas/Blusa.jpg",
 "Prenda de Mujer color rosa, cuya tendencia se ve en las chicas jóvenes, tiene mangas Mariposa además de un cuello cortado en V.",
 149.99,2,3,7,1,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Blusa de Cuello V",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Blusa de Cuello V","../Images/Ropas/Blusa.jpg",
 "Prenda de Mujer color verde, cuya tendencia se ve en las chicas jóvenes, tiene mangas Mariposa además de un cuello cortado en V.",
 149.99,2,3,5,1,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Blusa de Cuello V",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Blusa de Cuello V","../Images/Ropas/Blusa.jpg",
 "Prenda de Mujer color amarillo, cuya tendencia se ve en las chicas jóvenes, tiene mangas Mariposa además de un cuello cortado en V.",
 149.99,2,3,3,1,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Pantalon Vaquero",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Pantalon Vaquero","../Images/Ropas/PantalonVaquero.jpg",
 "Prenda de Hombre color azul, cuyo corte favorece el realce de los gluteos para aquellos hombres que lo deseen.",
 239.99,1,5,4,8,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Pantalon Vaquero",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Pantalon Vaquero","../Images/Ropas/PantalonVaquero.jpg",
 "Prenda de Hombre color negro, cuyo corte favorece el realce de los gluteos para aquellos hombres que lo deseen.",
 239.99,1,5,1,8,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Pantalon Vaquero",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Pantalon Vaquero","../Images/Ropas/PantalonVaquero.jpg",
 "Prenda de Hombre color verde, cuyo corte favorece el realce de los gluteos para aquellos hombres que lo deseen.",
 239.99,1,5,5,8,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Pantalon de Gabardina",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Pantalon de Gabardina","../Images/Ropas/PantalonGabardina.jpg",
 "Prenda de Hombre color verde, cuyo corte favorece el realce de los gluteos para aquellos hombres que lo deseen.",
 239.99,1,3,5,7,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Pantalon de Gabardina",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Pantalon de Gabardina","../Images/Ropas/PantalonGabardina.jpg",
 "Prenda de Hombre color amarillo, cuyo corte favorece el realce de los gluteos para aquellos hombres que lo deseen.",
 239.99,1,3,3,7,1,NOW());
 INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
 VALUES("Pantalon de Gabardina",
 "Prenda de Hombre color azul, cuyo corte favorece el realce de los gluteos para aquellos hombres que lo deseen.",
 239.99,1,3,4,7,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Pantalon de Gabardina",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Pantalon de Gabardina","../Images/Ropas/PantalonGabardina.jpg",
 "Prenda de Hombre color rosa, cuyo corte favorece el realce de los gluteos para aquellos hombres que lo deseen.",
 239.99,1,3,7,7,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Pantalon de Gabardina",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Pantalon de Gabardina","../Images/Ropas/PantalonGabardina.jpg",
 "Prenda de Hombre color naranja, cuyo corte favorece el realce de los gluteos para aquellos hombres que lo deseen.",
 239.99,1,3,9,7,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Pantalon de Gabardina",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Pantalon de Gabardina","../Images/Ropas/PantalonGabardina.jpg",
 "Prenda de Hombre color verde bandera, cuyo corte favorece el realce de los gluteos para aquellos hombres que lo deseen.",
 239.99,1,3,8,7,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Juego de Pijama",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Juego de Pijama","../Images/Ropas/Pijama.jpg",
 "Juego de prendas para dormir unisex color amarillo. Hechas a base de algodon, ideal para tener un descanso placentero.",
 149.99,5,2,3,1,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Juego de Pijama",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Juego de Pijama","../Images/Ropas/Pijama.jpg",
 "Juego de prendas para dormir unisex color azul. Hechas a base de algodon, ideal para tener un descanso placentero.",
 149.99,5,2,4,1,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Juego de Pijama",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Juego de Pijama","../Images/Ropas/Pijama.jpg",
 "Juego de prendas para dormir unisex color rosa. Hechas a base de algodon, ideal para tener un descanso placentero.",
 149.99,5,2,7,1,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Camisa de vestir",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Camisa de vestir","../Images/Ropas/CamisaVestir.jpg",
 "Prenda para caballero, hecha con corte hecho para todo evento formal de color rosa",
 299.99,3,6,7,2,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Camisa de vestir",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Camisa de vestir","../Images/Ropas/CamisaVestir.jpg",
 "Prenda para caballero, hecha con corte hecho para todo evento formal de color azul",
 299.99,3,6,4,2,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Camisa de vestir",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Camisa de vestir","../Images/Ropas/CamisaVestir.jpg",
 "Prenda para caballero, hecha con corte hecho para todo evento formal de color morado",
 299.99,3,6,2,2,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Camisa de vestir",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Camisa de vestir","../Images/Ropas/CamisaVestir.jpg",
 "Prenda para caballero, hecha con corte hecho para todo evento formal de color verde",
 299.99,3,6,5,2,1,NOW());
-INSERT INTO TBL_ROPAS(CROPA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
-VALUES("Camisa de vestir",
+INSERT INTO TBL_ROPAS(CROPA,CRUTA,CDESCRIPCION,FPRECIO,NID_TIPO_ROPA,NID_MODA,NID_COLOR,NID_MATERIAL,BHABILITADO,DFECHA_ALTA)
+VALUES("Camisa de vestir","../Images/Ropas/CamisaVestir.jpg",
 "Prenda para caballero, hecha con corte hecho para todo evento formal de color aquamarina",
 299.99,3,6,10,2,1,NOW());
 
@@ -890,18 +919,3 @@ INSERT INTO TBL_DIRECCIONES(NID_PAIS,NID_ESTADO,NID_DELEGACION_MUNICIPIO,NID_COD
 VALUES(1,5,5,3,2,4,"30","1",1,NOW());
 INSERT INTO TBL_DIRECCIONES(NID_PAIS,NID_ESTADO,NID_DELEGACION_MUNICIPIO,NID_CODIGO_POSTAL,NID_COLONIA,NID_CALLE,CMANZANA,CLOTE,BHABILITADO,DFECHA_ALTA)
 VALUES(1,6,8,10,1,8,"50","5",1,NOW());
-
-DELIMITER $$
-CREATE PROCEDURE SPD_INSERTA_MODA(
-    IN pcModa VARCHAR(50),
-    OUT pcValor INT)
-BEGIN
-    IF EXISTS(SELECT * FROM CAT_MODAS WHERE CMODA = pcModa) THEN
-        SET pcValor = CAST(SELECT NID_MODA FROM CAT_MODAS WHERE CMODA = pcModa AS UNSIGNED);
-    ELSE
-        INSERT INTO CAT_MODAS(CMODA,BHABILITADO,DFECHA_ALTA)
-        VALUES(pcModa,1,NOW());
-        SET pcValor = CAST(SELECT NID_MODA FROM CAT_MODAS WHERE CMODA = pcModa AS UNSIGNED);
-    END IF;
-END
-$$ DELIMITER ;
