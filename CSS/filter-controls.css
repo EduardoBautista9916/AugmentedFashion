@@ -3,16 +3,16 @@
   padding-bottom: 15px;
   font-size: 25px;
 }
-/*
+
 #precio-min, #precio-max{
     margin: 20px 0px 20px 0px;
     width: 80%;
 }
-/*
+
 #precio-max{
   margin-top: -50px;
   margin-bottom: -20px;
-}*/
+}
   
 .slider:focus {
     outline: none;
